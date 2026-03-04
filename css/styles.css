@@ -382,6 +382,21 @@ body.page-partnership .nav-links a.active::after {
   margin-bottom: var(--spacing-sm);
 }
 
+body.page-websites .section-tag:not(.section-tag-red) {
+  background: rgba(198, 32, 37, 0.1);
+  color: var(--accent-red);
+}
+
+body.page-promotion .section-tag:not(.section-tag-blue) {
+  background: rgba(84, 123, 164, 0.1);
+  color: var(--accent-blue);
+}
+
+body.page-partnership .section-tag:not(.section-tag-gray) {
+  background: rgba(102, 106, 134, 0.1);
+  color: var(--accent-gray);
+}
+
 /* ============================
    SERVICES GRID
 ============================ */
@@ -454,6 +469,18 @@ body.page-partnership .nav-links a.active::after {
   font-weight: 700;
 }
 
+body.page-websites .service-features li::before {
+  color: var(--accent-red);
+}
+
+body.page-promotion .service-features li::before {
+  color: var(--accent-blue);
+}
+
+body.page-partnership .service-features li::before {
+  color: var(--accent-gray);
+}
+
 .service-link {
   color: var(--accent-orange);
   font-weight: 600;
@@ -465,6 +492,18 @@ body.page-partnership .nav-links a.active::after {
 
 .service-link:hover {
   gap: 1rem;
+}
+
+body.page-websites .service-link {
+  color: var(--accent-red);
+}
+
+body.page-promotion .service-link {
+  color: var(--accent-blue);
+}
+
+body.page-partnership .service-link {
+  color: var(--accent-gray);
 }
 
 /* Color Variants for Service Cards */
@@ -579,6 +618,18 @@ body.page-partnership .pricing-badge {
   margin-bottom: var(--spacing-xs);
 }
 
+body.page-websites .pricing-tier {
+  color: var(--accent-red);
+}
+
+body.page-promotion .pricing-tier {
+  color: var(--accent-blue);
+}
+
+body.page-partnership .pricing-tier {
+  color: var(--accent-gray);
+}
+
 .pricing-amount {
   font-size: 2.5rem;
   font-weight: 700;
@@ -622,6 +673,18 @@ body.page-partnership .pricing-badge {
   color: var(--accent-orange);
   font-weight: 700;
   flex-shrink: 0;
+}
+
+body.page-websites .pricing-features li::before {
+  color: var(--accent-red);
+}
+
+body.page-promotion .pricing-features li::before {
+  color: var(--accent-blue);
+}
+
+body.page-partnership .pricing-features li::before {
+  color: var(--accent-gray);
 }
 
 /* Color Variants for Pricing Cards */
@@ -734,6 +797,21 @@ body.page-partnership .process-timeline::before {
   background: rgba(250, 95, 31, 0.05);
   border-radius: 0;
   border-left: 3px solid var(--accent-orange);
+}
+
+body.page-websites .step-content {
+  background: rgba(198, 32, 37, 0.05);
+  border-left-color: var(--accent-red);
+}
+
+body.page-promotion .step-content {
+  background: rgba(84, 123, 164, 0.05);
+  border-left-color: var(--accent-blue);
+}
+
+body.page-partnership .step-content {
+  background: rgba(102, 106, 134, 0.05);
+  border-left-color: var(--accent-gray);
 }
 
 .step-content h4 {
@@ -1206,12 +1284,20 @@ body.page-partnership .process-timeline::before {
   font-weight: 700;
 }
 
+body.page-websites .upgrade-features li::before {
+  color: var(--accent-red);
+}
+
 .upgrade-value {
   padding: var(--spacing-sm);
   background: rgba(0, 0, 0, 0.03);
   border-left: 3px solid var(--accent-teal);
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+body.page-websites .upgrade-value {
+  border-left-color: var(--accent-red);
 }
 
 .upgrade-value strong {
@@ -1232,6 +1318,168 @@ body.page-partnership .process-timeline::before {
 .section-tag-gray {
   background: var(--accent-gray);
   color: var(--primary-white);
+}
+
+/* ============================
+   DEMO POPUP
+============================ */
+
+.demo-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.demo-popup.active {
+  display: flex;
+}
+
+.demo-popup-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.demo-popup-content {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: var(--primary-white);
+  padding: var(--spacing-lg);
+  border-radius: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: popupSlideIn 0.4s ease;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.demo-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--accent-gray);
+  transition: var(--transition-fast);
+}
+
+.demo-popup-close:hover {
+  color: var(--primary-black);
+  transform: rotate(90deg);
+}
+
+.demo-popup-content h3 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-black);
+}
+
+.demo-price {
+  font-size: 1.5rem;
+  color: var(--accent-orange);
+  margin-bottom: var(--spacing-sm);
+}
+
+.demo-price strong {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.demo-description {
+  color: var(--accent-gray);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--primary-black);
+}
+
+.form-field input {
+  padding: 0.875rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  transition: var(--transition-fast);
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--accent-orange);
+}
+
+.form-divider {
+  text-align: center;
+  color: var(--accent-gray);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.form-divider::before {
+  left: 0;
+}
+
+.form-divider::after {
+  right: 0;
+}
+
+.demo-reminder {
+  font-size: 0.875rem;
+  color: var(--accent-gray);
+  text-align: center;
+  margin: var(--spacing-sm) 0;
+}
+
+.demo-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
 }
 
 /* ============================

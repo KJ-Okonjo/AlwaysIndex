@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Currency Toggle
   initCurrencyToggle();
+  
+  // Demo Popup
+  initDemoPopup();
 });
 
 // ============================
@@ -335,4 +338,65 @@ function convertPricing(currency, rates, symbols) {
     
     el.textContent = convertedText;
   });
+}
+
+// ============================
+// DEMO POPUP
+// ============================
+
+function initDemoPopup() {
+  const popup = document.getElementById('demoPopup');
+  const closeBtn = document.getElementById('closePopup');
+  const form = document.getElementById('demoForm');
+  
+  if (!popup) return;
+  
+  // Show popup after 15 seconds (not immediately)
+  setTimeout(() => {
+    // Check if user hasn't already seen it in this session
+    if (!sessionStorage.getItem('demoPopupShown')) {
+      popup.classList.add('active');
+      sessionStorage.setItem('demoPopupShown', 'true');
+    }
+  }, 15000); // 15 seconds delay
+  
+  // Close popup
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      popup.classList.remove('active');
+    });
+  }
+  
+  // Close on overlay click
+  popup.querySelector('.demo-popup-overlay').addEventListener('click', () => {
+    popup.classList.remove('active');
+  });
+  
+  // Handle form submission
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('demoEmail').value;
+      const phone = document.getElementById('demoPhone').value;
+      
+      // Validate at least one is filled
+      if (!email && !phone) {
+        alert('Please provide either your email or phone number.');
+        return;
+      }
+      
+      // Success message
+      alert('Thank you! We\'ll follow up within 24 hours to discuss your demo website.');
+      
+      // Close popup
+      popup.classList.remove('active');
+      
+      // Reset form
+      form.reset();
+      
+      // In production, you would send this to your backend/CRM
+      console.log('Demo request:', { email, phone });
+    });
+  }
 }
