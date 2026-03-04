@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Newsletter Form
   initNewsletterForm();
+  
+  // Currency Toggle
+  initCurrencyToggle();
 });
 
 // ============================
@@ -234,5 +237,102 @@ function initNewsletterForm() {
       // TODO: Integrate with newsletter service
       console.log('Newsletter signup:', email);
     }, 1000);
+  });
+}
+
+// ============================
+// CURRENCY TOGGLE
+// ============================
+
+function initCurrencyToggle() {
+  const currencyBtns = document.querySelectorAll('.currency-btn');
+  
+  if (currencyBtns.length === 0) return;
+  
+  // Exchange rates (approximate, update as needed)
+  const rates = {
+    NGN: 1,
+    GBP: 0.00082,  // 1 NGN = ~0.00082 GBP
+    USD: 0.0011    // 1 NGN = ~0.0011 USD
+  };
+  
+  const symbols = {
+    NGN: '₦',
+    GBP: '£',
+    USD: '$'
+  };
+  
+  currencyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currency = btn.getAttribute('data-currency');
+      
+      // Update active state
+      currencyBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Convert all pricing amounts
+      convertPricing(currency, rates, symbols);
+      
+      // Save preference
+      localStorage.setItem('preferredCurrency', currency);
+    });
+  });
+  
+  // Load saved preference
+  const saved = localStorage.getItem('preferredCurrency');
+  if (saved) {
+    const savedBtn = document.querySelector(`[data-currency="${saved}"]`);
+    if (savedBtn) savedBtn.click();
+  }
+}
+
+function convertPricing(currency, rates, symbols) {
+  const priceElements = document.querySelectorAll('.pricing-amount');
+  
+  priceElements.forEach(el => {
+    const originalText = el.getAttribute('data-original') || el.textContent;
+    
+    // Store original if not already stored
+    if (!el.getAttribute('data-original')) {
+      el.setAttribute('data-original', originalText);
+    }
+    
+    // Extract numeric values (handles ranges like "250k–400k")
+    const matches = originalText.match(/₦?(\d+(?:\.\d+)?)(k|m)?/gi);
+    
+    if (!matches) return;
+    
+    let convertedText = originalText;
+    
+    matches.forEach(match => {
+      const numMatch = match.match(/(\d+(?:\.\d+)?)(k|m)?/i);
+      if (!numMatch) return;
+      
+      let value = parseFloat(numMatch[1]);
+      const multiplier = numMatch[2];
+      
+      // Convert to base amount
+      if (multiplier && multiplier.toLowerCase() === 'k') value *= 1000;
+      if (multiplier && multiplier.toLowerCase() === 'm') value *= 1000000;
+      
+      // Convert currency
+      const converted = value * rates[currency];
+      
+      // Format output
+      let formatted;
+      if (converted >= 1000000) {
+        formatted = (converted / 1000000).toFixed(1) + 'm';
+      } else if (converted >= 1000) {
+        formatted = (converted / 1000).toFixed(0) + 'k';
+      } else {
+        formatted = Math.round(converted).toString();
+      }
+      
+      // Replace in text
+      const symbol = symbols[currency];
+      convertedText = convertedText.replace(match, symbol + formatted);
+    });
+    
+    el.textContent = convertedText;
   });
 }
