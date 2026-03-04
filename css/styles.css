@@ -166,18 +166,27 @@ p {
 }
 
 .nav-cta {
-  padding: 0.875rem 1.75rem;
+  padding: 1rem 2.25rem;
   background: var(--accent-orange);
   color: var(--primary-white);
   border-radius: 2px;
   font-weight: 600;
   transition: var(--transition-smooth);
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .nav-cta:hover {
   background: var(--accent-navy);
   transform: translateY(-1px);
+}
+
+.nav-links a.active {
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .mobile-menu-toggle {
@@ -301,6 +310,10 @@ p {
   margin: 0 auto;
 }
 
+.pricing-section {
+  padding-top: 120px;
+}
+
 .section-header {
   text-align: center;
   max-width: 800px;
@@ -405,6 +418,55 @@ p {
   gap: 1rem;
 }
 
+/* Color Variants for Service Cards */
+.service-card-orange::before {
+  background: var(--accent-orange);
+}
+
+.service-card-orange:hover {
+  border-color: var(--accent-orange);
+}
+
+.service-card-navy::before {
+  background: var(--accent-navy);
+}
+
+.service-card-navy:hover {
+  border-color: var(--accent-navy);
+}
+
+.service-card-blue::before {
+  background: var(--accent-blue);
+}
+
+.service-card-blue:hover {
+  border-color: var(--accent-blue);
+}
+
+.service-card-teal::before {
+  background: var(--accent-teal);
+}
+
+.service-card-teal:hover {
+  border-color: var(--accent-teal);
+}
+
+.service-card-gray::before {
+  background: var(--accent-gray);
+}
+
+.service-card-gray:hover {
+  border-color: var(--accent-gray);
+}
+
+.service-card-red::before {
+  background: var(--accent-red);
+}
+
+.service-card-red:hover {
+  border-color: var(--accent-red);
+}
+
 /* ============================
    PRICING TIERS
 ============================ */
@@ -489,6 +551,55 @@ p {
   flex-shrink: 0;
 }
 
+/* Color Variants for Pricing Cards */
+.pricing-card-orange::before {
+  background: var(--accent-orange);
+}
+
+.pricing-card-orange:hover {
+  border-color: var(--accent-orange);
+}
+
+.pricing-card-navy::before {
+  background: var(--accent-navy);
+}
+
+.pricing-card-navy:hover {
+  border-color: var(--accent-navy);
+}
+
+.pricing-card-blue::before {
+  background: var(--accent-blue);
+}
+
+.pricing-card-blue:hover {
+  border-color: var(--accent-blue);
+}
+
+.pricing-card-teal::before {
+  background: var(--accent-teal);
+}
+
+.pricing-card-teal:hover {
+  border-color: var(--accent-teal);
+}
+
+.pricing-card-gray::before {
+  background: var(--accent-gray);
+}
+
+.pricing-card-gray:hover {
+  border-color: var(--accent-gray);
+}
+
+.pricing-card-red::before {
+  background: var(--accent-red);
+}
+
+.pricing-card-red:hover {
+  border-color: var(--accent-red);
+}
+
 /* ============================
    PROCESS TIMELINE
 ============================ */
@@ -547,6 +658,31 @@ p {
 .step-content p {
   color: var(--accent-gray);
   margin-bottom: 0;
+}
+
+/* Color Variants for Step Numbers */
+.step-orange {
+  background: var(--accent-orange);
+}
+
+.step-navy {
+  background: var(--accent-navy);
+}
+
+.step-blue {
+  background: var(--accent-blue);
+}
+
+.step-teal {
+  background: var(--accent-teal);
+}
+
+.step-gray {
+  background: var(--accent-gray);
+}
+
+.step-red {
+  background: var(--accent-red);
 }
 
 /* ============================
