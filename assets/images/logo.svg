@@ -1,0 +1,7 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="5" y="5" width="40" height="40" rx="8" fill="#fa5f1f"/>
+  <path d="M25 15L35 25L25 35L15 25L25 15Z" fill="white"/>
+  <text x="55" y="32" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#000000">
+    AlwaysIndex
+  </text>
+</svg>
