@@ -562,10 +562,26 @@ body.page-partnership .service-link {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  filter: blur(8px);
 }
 
 .showcase-card:hover .showcase-image img {
   transform: scale(1.05);
+}
+
+.showcase-coming-soon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .showcase-info {
@@ -1001,10 +1017,19 @@ body.page-partnership .step-content {
 }
 
 .brands-grid-four {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 1000px;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.brands-grid-four .brand-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brands-grid-four .brand-card:hover .brand-overlay {
+  opacity: 0;
 }
 
 .brand-card {
@@ -1623,6 +1648,10 @@ body.page-websites .upgrade-value {
     height: 300px;
   }
   
+  .showcase-coming-soon {
+    font-size: 1.5rem;
+  }
+  
   .demo-popup {
     padding: var(--spacing-sm);
   }
@@ -1764,6 +1793,12 @@ body.page-websites .upgrade-value {
     border-bottom: none;
   }
   
+  .brands-grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
   .brands-grid-four {
     grid-template-columns: 1fr;
   }
