@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIR Apparel - Contemporary Streetwear</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #fa5f1f;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, #0d1d30 0%, #000 100%);
+    }
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff, #fa5f1f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      padding: 1rem 2.5rem;
+      background: #fa5f1f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(250, 95, 31, 0.4);
+    }
+    .collection {
+      padding: 6rem 3rem;
+      background: #0d0d0d;
+    }
+    .collection h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .product-card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      background: #222;
+    }
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #333;
+    }
+    .product-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 1.5rem;
+      color: #fa5f1f;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">NOIR</div>
+    <nav>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#shop">Shop</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>NOIR APPAREL</h1>
+      <p>Contemporary streetwear for the modern rebel</p>
+      <a href="#shop" class="cta-btn">Shop Collection</a>
+    </div>
+  </section>
+  
+  <section class="collection" id="collection">
+    <h2>New Arrivals</h2>
+    <div class="grid">
+      <div class="product-card">
+        <img src="" alt="Product">
+        <h3>Phantom Hoodie</h3>
+        <p class="price">₦45,000</p>
+      </div>
+      <div class="product-card">
+        <img src="" alt="Product">
+        <h3>Shadow Tee</h3>
+        <p class="price">₦25,000</p>
+      </div>
+      <div class="product-card">
+        <img src="" alt="Product">
+        <h3>Eclipse Jacket</h3>
+        <p class="price">₦75,000</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

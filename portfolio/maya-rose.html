@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maya Rose - Content Creator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #000;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-style: italic;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #C62025;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 3rem;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+    .cta-btn {
+      padding: 1rem 2.5rem;
+      background: #C62025;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(198, 32, 37, 0.3);
+    }
+    .stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #C62025;
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+    }
+    .content {
+      padding: 6rem 3rem;
+      background: #f9f9f9;
+    }
+    .content h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .content-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    .content-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Maya Rose</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#brands">Brands</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Content Creator.<br>Brand Storyteller.</h1>
+      <p>Helping brands connect with audiences through authentic, creative content and strategic partnerships.</p>
+      <a href="#contact" class="cta-btn">Work With Me</a>
+      
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">500K+</div>
+          <div class="stat-label">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Brand Partners</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">10M+</div>
+          <div class="stat-label">Total Reach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content" id="work">
+    <h2>What I Do</h2>
+    <div class="grid">
+      <div class="content-card">
+        <h3>Brand Partnerships</h3>
+        <p>Strategic collaborations that align with my values and resonate with my audience.</p>
+      </div>
+      <div class="content-card">
+        <h3>Content Creation</h3>
+        <p>High-quality photos, videos, and stories that capture attention and drive engagement.</p>
+      </div>
+      <div class="content-card">
+        <h3>Consulting</h3>
+        <p>Helping brands develop authentic creator partnerships and social media strategies.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

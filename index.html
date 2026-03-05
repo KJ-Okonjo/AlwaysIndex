@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AlwaysIndex — High-Leverage Brand Positioning & Growth</title>
-  <meta name="description" content="AlwaysIndex is a selective brand positioning and growth firm. We build websites, strategic partnerships, and cultural brand spotlights for Culturally-aligned businesses.">
+  <title>AlwaysIndex — Launch Your Website in Less Than 7 Days</title>
+  <meta name="description" content="AlwaysIndex designs and launches high-impact websites for clothing brands, creators, and startups. Premium websites delivered in 7 days.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,25 +12,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles-new.css">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
+  
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
 
   <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/images/Always Index LOGO .png" alt="AlwaysIndex Logo" class="logo-image">
+      <a href="#hero" class="logo">
+        <img src="assets/images/Always Index LOGO .png" alt="AlwaysIndex" class="logo-image">
       </a>
       
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="website-creation.html">Websites</a></li>
-        <li><a href="promotion.html">Promotion</a></li>
-        <li><a href="growth-partnership.html">Partnership</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       
@@ -43,244 +46,533 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="hero-bg-animation">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    
     <div class="hero-content">
-      <span class="hero-tag">Brand Positioning & Growth</span>
-      <h1>Everything Index.<br>Building brands.</h1>
-      <p class="lead">
-        We turn vision into digital assets. Production-ready websites, strategic growth partnerships, 
-        and brand spotlights for businesses ready to scale.
+      <h1 class="hero-title animate-in">
+        Launch Your Website<br>
+        in Less Than <span class="gradient-text">7 Days</span>
+      </h1>
+      <p class="hero-subtitle animate-in">
+        AlwaysIndex designs and launches high-impact websites for<br>
+        clothing brands, creators, and startups.
       </p>
-      <div class="hero-cta">
-        <a href="#services" class="btn btn-primary">Explore Services</a>
-        <a href="#contact" class="btn btn-secondary">Start a Conversation</a>
+      <div class="hero-cta animate-in">
+        <a href="#pricing" class="btn btn-primary">View Pricing</a>
+        <a href="#work" class="btn btn-secondary">See Our Work</a>
+      </div>
+      
+      <div class="hero-stats animate-in">
+        <div class="stat">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Websites Launched</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Days Average</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES OVERVIEW -->
-  <section class="section" id="services">
-    <div class="services-grid">
-      <!-- Service 1: Website Creation -->
-      <div class="service-card reveal active">
-        <h3>Website Creation</h3>
-        <ul class="service-features">
-          <li>1–3 pages (Starter) to full e-commerce builds</li>
-          <li>Mobile-optimized, conversion-focused</li>
-          <li>7–14 day turnaround</li>
-          <li>Basic SEO, analytics setup</li>
-          <li>Post-launch support included</li>
-          <li>Optional: maintenance, landing pages, email funnels</li>
+  <!-- PRICING SECTION -->
+  <section class="section pricing-section" id="pricing">
+    <div class="section-header">
+      <span class="section-tag">Pricing</span>
+      <h2>Website Packages</h2>
+      <p class="lead">Choose the perfect package for your brand</p>
+    </div>
+    
+    <!-- Currency Toggle -->
+    <div class="currency-selector">
+      <button class="currency-btn active" data-currency="NGN">₦ NGN</button>
+      <button class="currency-btn" data-currency="GBP">£ GBP</button>
+      <button class="currency-btn" data-currency="USD">$ USD</button>
+    </div>
+    
+    <div class="pricing-grid">
+      <!-- Starter Package -->
+      <div class="pricing-card" data-package="starter">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-amount">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="350000">350,000</span>
+        </div>
+        <p class="pricing-description">
+          Perfect for personal brands and small businesses getting started online.
+        </p>
+        <ul class="pricing-features">
+          <li>1–3 pages (Home, About, Contact)</li>
+          <li>Mobile-responsive design</li>
+          <li>Basic SEO setup</li>
+          <li>Contact form integration</li>
+          <li>7–10 day delivery</li>
+          <li>1 round of revisions</li>
+          <li>14 days post-launch support</li>
         </ul>
-        <a href="website-creation.html" class="service-link">
-          View Tiers & Pricing →
-        </a>
+        <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
       </div>
       
-      <!-- Service 2: Strategic Growth Partnership -->
-      <div class="service-card reveal active">
-        <h3>Strategic Growth Partnership</h3>
-        <ul class="service-features">
-          <li>Brand positioning & messaging guidance</li>
-          <li>Marketing & distribution strategy</li>
-          <li>Networking & ecosystem introductions</li>
-          <li>Operations & logistics guidance</li>
-          <li>KPI tracking & founder governance</li>
-          <li>Flexible engagement: retainer or performance share</li>
+      <!-- Professional Package -->
+      <div class="pricing-card featured" data-package="professional">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Professional</div>
+        <div class="pricing-amount">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="600000">600,000</span>
+        </div>
+        <p class="pricing-description">
+          Ideal for clothing brands and established businesses needing a complete web presence.
+        </p>
+        <ul class="pricing-features">
+          <li>5–8 pages (full site structure)</li>
+          <li>Custom animations & interactions</li>
+          <li>Advanced SEO & analytics</li>
+          <li>Product showcase / lookbook</li>
+          <li>Newsletter integration</li>
+          <li>Social media integration</li>
+          <li>7 day delivery</li>
+          <li>2 rounds of revisions</li>
+          <li>30 days post-launch support</li>
         </ul>
-        <a href="growth-partnership.html" class="service-link">
-          Learn About Partnership →
-        </a>
+        <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
       </div>
       
-      <!-- Service 3: Brand Spotlight / Promotion -->
-      <div class="service-card reveal active">
-        <h3>Promotion / Brand Spotlight</h3>
-        <ul class="service-features">
-          <li>Feature across Instagram, newsletter, blog</li>
-          <li>Custom content creation (posts, reels, stories)</li>
-          <li>Curated audience reach</li>
-          <li>Limited monthly slots</li>
-          <li>Single post, full package, or premium campaign</li>
-          <li>Brand storytelling & interview options</li>
+      <!-- Premium Package -->
+      <div class="pricing-card" data-package="premium">
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-amount">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="950000">950,000</span>
+        </div>
+        <p class="pricing-description">
+          Complete e-commerce solution for brands ready to sell online.
+        </p>
+        <ul class="pricing-features">
+          <li>10+ pages (unlimited structure)</li>
+          <li>Full e-commerce functionality</li>
+          <li>Payment gateway integration</li>
+          <li>Inventory management system</li>
+          <li>Advanced animations & effects</li>
+          <li>Premium SEO & marketing setup</li>
+          <li>Custom admin dashboard</li>
+          <li>5–7 day delivery</li>
+          <li>3 rounds of revisions</li>
+          <li>60 days post-launch support</li>
         </ul>
-        <a href="promotion.html" class="service-link">
-          See Promotion Details →
-        </a>
+        <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
       </div>
     </div>
   </section>
 
-  <!-- WEBSITE WORK SHOWCASE -->
-  <section class="section" style="background: #f8f9fa;">
-    <div class="section-header reveal active">
+  <!-- UPGRADES SECTION -->
+  <section class="section upgrades-section">
+    <div class="section-header">
+      <span class="section-tag">Customize</span>
+      <h2>Optional Upgrades</h2>
+      <p class="lead">Enhance your website with additional features</p>
+    </div>
+    
+    <div class="upgrades-grid">
+      <div class="upgrade-card" data-upgrade="express" data-price="150000">
+        <div class="upgrade-icon">⚡</div>
+        <h3>Express 72-Hour Delivery</h3>
+        <p>Launch your website in just 3 days</p>
+        <div class="upgrade-price">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="150000">150,000</span>
+        </div>
+        <button class="upgrade-toggle">Add to Package</button>
+      </div>
+      
+      <div class="upgrade-card" data-upgrade="pages" data-price="50000">
+        <div class="upgrade-icon">📄</div>
+        <h3>Extra Pages</h3>
+        <p>Add custom pages beyond your package</p>
+        <div class="upgrade-price">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="50000">50,000</span> <span class="price-unit">/ page</span>
+        </div>
+        <button class="upgrade-toggle">Add to Package</button>
+      </div>
+      
+      <div class="upgrade-card" data-upgrade="catalog" data-price="120000">
+        <div class="upgrade-icon">🛍️</div>
+        <h3>Product Catalog Setup</h3>
+        <p>Professional product showcase system</p>
+        <div class="upgrade-price">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="120000">120,000</span>
+        </div>
+        <button class="upgrade-toggle">Add to Package</button>
+      </div>
+      
+      <div class="upgrade-card" data-upgrade="seo" data-price="80000">
+        <div class="upgrade-icon">📈</div>
+        <h3>Premium SEO Setup</h3>
+        <p>Advanced optimization for search engines</p>
+        <div class="upgrade-price">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="80000">80,000</span>
+        </div>
+        <button class="upgrade-toggle">Add to Package</button>
+      </div>
+      
+      <div class="upgrade-card" data-upgrade="ecommerce" data-price="200000">
+        <div class="upgrade-icon">💳</div>
+        <h3>E-commerce Functionality</h3>
+        <p>Full shopping cart and payment system</p>
+        <div class="upgrade-price">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="200000">200,000</span>
+        </div>
+        <button class="upgrade-toggle">Add to Package</button>
+      </div>
+      
+      <div class="upgrade-card" data-upgrade="maintenance" data-price="50000">
+        <div class="upgrade-icon">🔧</div>
+        <h3>Ongoing Maintenance</h3>
+        <p>Monthly updates and technical support</p>
+        <div class="upgrade-price">
+          <span class="currency-symbol">₦</span>
+          <span class="price-value" data-ngn="50000">50,000</span> <span class="price-unit">/ month</span>
+        </div>
+        <button class="upgrade-toggle">Add to Package</button>
+      </div>
+    </div>
+    
+    <div class="total-calculator">
+      <div class="calculator-inner">
+        <div class="calculator-label">Estimated Total</div>
+        <div class="calculator-amount">
+          <span class="currency-symbol">₦</span>
+          <span class="total-value">0</span>
+        </div>
+        <p class="calculator-note">Select a package above to calculate your total</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / PORTFOLIO SECTION -->
+  <section class="section work-section" id="work">
+    <div class="section-header">
       <span class="section-tag">Portfolio</span>
-      <h2>Example Website Work</h2>
-      <p class="lead">
-        Visual proof of our capability. High-quality websites built for different industries and use cases.
-      </p>
+      <h2>Our Work</h2>
+      <p class="lead">High-impact websites we've created for brands</p>
     </div>
     
-    <div class="showcase-grid showcase-grid-two">
-      <!-- Real Estate Website -->
-      <div class="showcase-card reveal active">
-        <div class="showcase-image">
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80" alt="Website Example">
-          <div class="showcase-coming-soon">Coming Soon</div>
-        </div>
-        <div class="showcase-info">
-          <h3>Coming Soon</h3>
-        </div>
-      </div>
-      
-      <!-- Fashion Brand Website -->
-      <div class="showcase-card reveal active">
-        <div class="showcase-image">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&q=80" alt="Website Example">
-          <div class="showcase-coming-soon">Coming Soon</div>
-        </div>
-        <div class="showcase-info">
-          <h3>Coming Soon</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section">
-    <div class="section-header reveal active">
-      <span class="section-tag">Client Stories</span>
-      <h2>Trusted by all communities</h2>
-      <p class="lead">
-        Here's what clients say about working with AlwaysIndex.
-      </p>
+    <div class="work-filter">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="concept">Concept Websites</button>
+      <button class="filter-btn" data-filter="client">Real Client Work</button>
     </div>
     
-    <div class="testimonials-grid">
-      <!-- Testimonial 1 -->
-      <div class="testimonial-card reveal active">
-        <p class="testimonial-content">
-          "We needed a site that could convert. AlwaysIndex delivered in 10 days. 
-          Our inquiry rate tripled in the first month. Clean work, efficient execution."
-        </p>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
-          <div class="author-info">
-            <h5>Sarah Mitchell</h5>
-            <p>Founder, Radius Studio</p>
+    <div class="work-grid">
+      <!-- Clothing Brand Example -->
+      <div class="work-card" data-category="concept" data-preview="noir-apparel">
+        <div class="work-image">
+          <img src="assets/portfolio/noir-apparel-preview.jpg" alt="NOIR Apparel Website" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80'">
+          <div class="work-overlay">
+            <div class="work-info">
+              <h3>NOIR Apparel</h3>
+              <p>Contemporary Streetwear Brand</p>
+              <span class="work-tag">Concept</span>
+            </div>
           </div>
         </div>
       </div>
       
-      <!-- Testimonial 2 -->
-      <div class="testimonial-card reveal active">
-        <p class="testimonial-content">
-          "They helped us clarify our positioning. The strategic guidance was invaluable. 
-          Selective, precise, results-driven."
-        </p>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
-          <div class="author-info">
-            <h5>Adeyemi Cole</h5>
-            <p>CEO, Forge Collective</p>
+      <!-- Personal Brand Example -->
+      <div class="work-card" data-category="concept" data-preview="maya-rose">
+        <div class="work-image">
+          <img src="assets/portfolio/maya-rose-preview.jpg" alt="Maya Rose Website" onerror="this.src='https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80'">
+          <div class="work-overlay">
+            <div class="work-info">
+              <h3>Maya Rose</h3>
+              <p>Content Creator & Influencer</p>
+              <span class="work-tag">Concept</span>
+            </div>
           </div>
         </div>
       </div>
       
-      <!-- Testimonial 3 -->
-      <div class="testimonial-card reveal active">
-        <p class="testimonial-content">
-          "The brand feature connected us with the right audience. Not clicks, customers. 
-          Best decision we made for visibility."
-        </p>
-        <div class="testimonial-author">
-          <div class="author-avatar">L</div>
-          <div class="author-info">
-            <h5>Lucas Ferreira</h5>
-            <p>Founder, Atelier Bloom</p>
+      <!-- Startup Example -->
+      <div class="work-card" data-category="concept" data-preview="elevate-studio">
+        <div class="work-image">
+          <img src="assets/portfolio/elevate-studio-preview.jpg" alt="Elevate Studio Website" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'">
+          <div class="work-overlay">
+            <div class="work-info">
+              <h3>Elevate Studio</h3>
+              <p>Creative Design Agency</p>
+              <span class="work-tag">Concept</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- E-commerce Example -->
+      <div class="work-card" data-category="concept" data-preview="lux-fashion">
+        <div class="work-image">
+          <img src="assets/portfolio/lux-fashion-preview.jpg" alt="Lux Fashion Website" onerror="this.src='https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80'">
+          <div class="work-overlay">
+            <div class="work-info">
+              <h3>Lux Fashion</h3>
+              <p>Premium Fashion E-commerce</p>
+              <span class="work-tag">Concept</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CALL TO ACTION / CONTACT -->
-  <section class="contact-section" id="contact">
+  <!-- PROCESS SECTION -->
+  <section class="section process-section">
+    <div class="section-header">
+      <span class="section-tag">Process</span>
+      <h2>How It Works</h2>
+      <p class="lead">From consultation to launch in four simple steps</p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Consultation</h3>
+          <p>We discuss your brand, goals, and website requirements. Share your vision and we'll provide expert guidance on the best approach.</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Design</h3>
+          <p>Our team creates a modern, custom layout tailored to your brand identity. We focus on aesthetics and user experience.</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Development</h3>
+          <p>We build your website with smooth animations, responsive design, and optimized performance across all devices.</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Launch</h3>
+          <p>Your website is delivered and launched within 7 days. We provide support to ensure everything runs smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section faq-section" id="faq">
+    <div class="section-header">
+      <span class="section-tag">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p class="lead">Everything you need to know about our service</p>
+    </div>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How long does it take to launch my site?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Our standard timeline is 7 days from project kickoff to launch. For our Starter package, delivery is typically 7-10 days. Professional packages are delivered within 7 days, and Premium packages in 5-7 days. Need it faster? Our Express upgrade delivers in just 72 hours.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do you only work with clothing brands?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>While we specialize in clothing brands and fashion businesses, we also work with creators, influencers, startups, and various other businesses. If you need a premium website delivered quickly, we can help.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Can you redesign my existing website?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We can redesign your existing website to give it a modern, fresh look. Contact us to discuss your current site and what improvements you're looking for.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do you offer ongoing support?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>All packages include post-launch support (14-60 days depending on your package). For ongoing maintenance, technical support, and updates, we offer a monthly maintenance plan at ₦50,000/month.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What if I need changes after launch?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Each package includes revision rounds (1-3 depending on tier) before launch. After launch, you have support coverage for technical issues. Additional changes can be handled through our maintenance plan or as separate projects.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do I need to provide content and images?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, you'll need to provide your brand assets, content, and images. We can offer guidance on content structure and image requirements. If you need professional copywriting or photography, we can recommend trusted partners.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What payment methods do you accept?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We accept bank transfers and can provide payment plans for Premium packages. A 50% deposit is required to start your project, with the balance due before launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section contact-section" id="contact">
+    <div class="section-header">
+      <span class="section-tag">Contact</span>
+      <h2>Start Your Website Project</h2>
+      <p class="lead">Get in touch and let's bring your vision to life</p>
+    </div>
+    
     <div class="contact-content">
-      <h2>Ready to Build Something Exceptional?</h2>
-      <p class="lead">
-        Whether you need a website, strategic partnership, or brand spotlight, 
-        we're here to help you grow. Let's start the conversation.
-      </p>
-      
       <div class="contact-methods">
-        <a href="#" class="contact-btn" data-whatsapp="2347047167280" data-message="Hi, I'd like to learn more about AlwaysIndex services.">
-          WhatsApp Us
+        <a href="https://wa.me/2347047167280?text=Hi%2C%20I%27d%20like%20to%20start%20a%20website%20project%20with%20AlwaysIndex." class="contact-card" target="_blank">
+          <div class="contact-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>+234 704 716 7280</p>
+          <span class="contact-cta">Message Us →</span>
         </a>
-        <a href="#" class="contact-btn" data-email="hello@alwaysindex.com" data-subject="AlwaysIndex Inquiry">
-          Send an Email
+        
+        <a href="mailto:hello@alwaysindex.com?subject=Website%20Project%20Inquiry" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p>hello@alwaysindex.com</p>
+          <span class="contact-cta">Send Email →</span>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER SIGNUP -->
-  <section class="section" style="background: #f8f9fa;">
-    <div class="section-header reveal active">
-      <span class="section-tag">Stay Connected</span>
-      <h2>Get Brand Insights & Updates</h2>
-      <p class="lead">
-        Join our newsletter for case studies, growth strategies, and curated brand spotlights. 
-        No spam, just value.
-      </p>
-    </div>
-    
-    <div style="max-width: 600px; margin: 0 auto;">
-      <form class="newsletter-form reveal active" id="newsletterForm">
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Enter your email address" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </div>
-        <p class="form-note">We respect your inbox. Unsubscribe anytime.</p>
-      </form>
+      
+      <div class="contact-form-container">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-field">
+              <label for="brandName">Brand Name</label>
+              <input type="text" id="brandName" name="brandName" required>
+            </div>
+          </div>
+          
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label for="projectType">Project Type</label>
+              <select id="projectType" name="projectType" required>
+                <option value="">Select type</option>
+                <option value="clothing">Clothing Brand</option>
+                <option value="personal">Personal Brand / Creator</option>
+                <option value="startup">Startup / Business</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-field">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget" required>
+                <option value="">Select range</option>
+                <option value="starter">₦350k - Starter</option>
+                <option value="professional">₦600k - Professional</option>
+                <option value="premium">₦950k - Premium</option>
+                <option value="custom">Custom Project</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-field">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-content">
-      <!-- About -->
       <div class="footer-section">
         <h4>AlwaysIndex</h4>
-        <p>
-          A selective brand positioning and growth firm. 
-          High-leverage brand positioning and growth firm.
-        </p>
+        <p>High-impact websites for clothing brands, creators, and startups. Delivered in 7 days.</p>
       </div>
       
-      <!-- Services -->
       <div class="footer-section">
-        <h4>Services</h4>
+        <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="website-creation.html">Website Creation</a></li>
-          <li><a href="promotion.html">Promotion</a></li>
-          <li><a href="growth-partnership.html">Growth Partnership</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       
-      <!-- Contact -->
       <div class="footer-section">
         <h4>Contact</h4>
         <ul class="footer-links">
-          <li><a href="#" data-whatsapp="2347047167280">WhatsApp: +234 704 716 7280</a></li>
-          <li><a href="#" data-email="hello@alwaysindex.com">Email: hello@alwaysindex.com</a></li>
+          <li><a href="https://wa.me/2347047167280" target="_blank">WhatsApp: +234 704 716 7280</a></li>
+          <li><a href="mailto:hello@alwaysindex.com">Email: hello@alwaysindex.com</a></li>
         </ul>
       </div>
       
-      <!-- Legal -->
       <div class="footer-section">
-        <h4>Company</h4>
-        <p>Owned and operated by <strong>WayKON Capital</strong></p>
+        <h4>Stay Updated</h4>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p style="font-size: 0.875rem; margin-top: 0.5rem; opacity: 0.8;">Get updates on new templates and web design tips</p>
       </div>
     </div>
     
@@ -289,43 +581,18 @@
     </div>
   </footer>
 
-  <!-- Currency Toggle -->
-  <div class="currency-toggle">
-    <button class="currency-btn active" data-currency="NGN">₦ NGN</button>
-    <button class="currency-btn" data-currency="GBP">£ GBP</button>
-    <button class="currency-btn" data-currency="USD">$ USD</button>
-  </div>
-
-  <!-- Demo Request Popup -->
-  <div class="demo-popup" id="demoPopup">
-    <div class="demo-popup-overlay"></div>
-    <div class="demo-popup-content">
-      <button class="demo-popup-close" id="closePopup">&times;</button>
-      <h3>Request a Demo Website</h3>
-      <p class="demo-price">For as little as <strong>₦4,999</strong></p>
-      <p class="demo-description">
-        See what we can build for you. Submit your details below and we'll follow up 
-        within 24 hours to discuss your demo website.
-      </p>
-      <form class="demo-form" id="demoForm">
-        <div class="form-field">
-          <label for="demoEmail">Email Address</label>
-          <input type="email" id="demoEmail" name="email" placeholder="your@email.com">
-        </div>
-        <div class="form-divider">OR</div>
-        <div class="form-field">
-          <label for="demoPhone">Phone Number</label>
-          <input type="tel" id="demoPhone" name="phone" placeholder="+234 XXX XXX XXXX">
-        </div>
-        <p class="demo-reminder">
-          Just provide your contact info and we'll reach out to discuss your demo website request.
-        </p>
-        <button type="submit" class="btn btn-primary demo-submit">Request Demo</button>
-      </form>
+  <!-- Portfolio Preview Modal -->
+  <div class="modal" id="portfolioModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body">
+        <iframe id="portfolioFrame" src="" frameborder="0"></iframe>
+      </div>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="js/script.js"></script>
+  <script src="js/script-new.js"></script>
 </body>
 </html>
