@@ -258,11 +258,11 @@ body.page-partnership .nav-links a.active::after {
 ============================ */
 
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
   position: relative;
   overflow: hidden;
   background: var(--primary-white);
@@ -314,6 +314,7 @@ body.page-partnership .nav-links a.active::after {
   gap: var(--spacing-sm);
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: var(--spacing-md);
 }
 
 .btn {
@@ -354,13 +355,17 @@ body.page-partnership .nav-links a.active::after {
 ============================ */
 
 .section {
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .pricing-section {
   padding-top: 120px;
+}
+
+#services {
+  padding-top: var(--spacing-md);
 }
 
 .section-header {
@@ -1102,6 +1107,30 @@ body.page-partnership .step-content {
 .currency-btn.active {
   background: var(--accent-orange);
   color: var(--primary-white);
+}
+
+.currency-btn[data-currency="NGN"].active {
+  background: var(--accent-red);
+}
+
+.currency-btn[data-currency="GBP"].active {
+  background: var(--accent-blue);
+}
+
+.currency-btn[data-currency="USD"].active {
+  background: var(--accent-gray);
+}
+
+.currency-btn[data-currency="NGN"].active {
+  background: var(--accent-orange);
+}
+
+.currency-btn[data-currency="GBP"].active {
+  background: var(--accent-blue);
+}
+
+.currency-btn[data-currency="USD"].active {
+  background: var(--accent-teal);
 }
 
 /* ============================

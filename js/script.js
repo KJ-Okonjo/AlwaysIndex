@@ -36,7 +36,9 @@ function initMobileMenu() {
   
   if (!toggle || !navLinks) return;
   
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     toggle.classList.toggle('active');
     navLinks.classList.toggle('active');
     document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
@@ -49,6 +51,15 @@ function initMobileMenu() {
       navLinks.classList.remove('active');
       document.body.style.overflow = '';
     });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
+      toggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   });
 }
 
@@ -351,14 +362,14 @@ function initDemoPopup() {
   
   if (!popup) return;
   
-  // Show popup after 15 seconds (not immediately)
+  // Show popup after 5 seconds
   setTimeout(() => {
     // Check if user hasn't already seen it in this session
     if (!sessionStorage.getItem('demoPopupShown')) {
       popup.classList.add('active');
       sessionStorage.setItem('demoPopupShown', 'true');
     }
-  }, 15000); // 15 seconds delay
+  }, 5000); // 5 seconds delay
   
   // Close popup
   if (closeBtn) {
