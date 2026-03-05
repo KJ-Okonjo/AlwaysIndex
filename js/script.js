@@ -362,14 +362,19 @@ function initDemoPopup() {
   
   if (!popup) return;
   
-  // Show popup after 5 seconds
-  setTimeout(() => {
-    // Check if user hasn't already seen it in this session
-    if (!sessionStorage.getItem('demoPopupShown')) {
-      popup.classList.add('active');
-      sessionStorage.setItem('demoPopupShown', 'true');
-    }
-  }, 5000); // 5 seconds delay
+  // Only show on websites page
+  const isWebsitesPage = document.body.classList.contains('page-websites');
+  
+  if (isWebsitesPage) {
+    // Show popup after 10 seconds
+    setTimeout(() => {
+      // Check if user hasn't already seen it in this session
+      if (!sessionStorage.getItem('demoPopupShown')) {
+        popup.classList.add('active');
+        sessionStorage.setItem('demoPopupShown', 'true');
+      }
+    }, 10000); // 10 seconds delay
+  }
   
   // Close popup
   if (closeBtn) {
