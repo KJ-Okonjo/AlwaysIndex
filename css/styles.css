@@ -527,6 +527,13 @@ body.page-partnership .service-link {
   margin-top: var(--spacing-lg);
 }
 
+.showcase-grid-two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .showcase-card {
   background: var(--primary-white);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -991,6 +998,13 @@ body.page-partnership .step-content {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
+}
+
+.brands-grid-four {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .brand-card {
@@ -1599,7 +1613,8 @@ body.page-websites .upgrade-value {
 ============================ */
 
 @media (max-width: 768px) {
-  .showcase-grid {
+  .showcase-grid,
+  .showcase-grid-two {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
@@ -1747,6 +1762,10 @@ body.page-websites .upgrade-value {
   
   .currency-btn:last-child {
     border-bottom: none;
+  }
+  
+  .brands-grid-four {
+    grid-template-columns: 1fr;
   }
   
   .demo-popup-content {
