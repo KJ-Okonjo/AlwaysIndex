@@ -1126,16 +1126,6 @@ body.page-partnership .step-content {
   background: var(--accent-gray);
 }
 
-.currency-btn[data-currency="NGN"].active {
-  background: var(--accent-orange);
-}
-
-.currency-btn[data-currency="GBP"].active {
-  background: var(--accent-blue);
-}
-
-.currency-btn[data-currency="USD"].active {
-  background: var(--accent-teal);
 }
 
 /* ============================
@@ -1636,6 +1626,10 @@ body.page-websites .upgrade-value {
   .btn {
     width: 100%;
     text-align: center;
+  }
+  
+  .nav-cta {
+    width: 150px;
   }
   
   .form-group {
