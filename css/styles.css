@@ -166,13 +166,15 @@ p {
 }
 
 .nav-cta {
-  padding: 0.875rem 1.5rem;
+  padding: 0.75rem 2rem;
   background: var(--accent-orange);
   color: var(--primary-white);
   border-radius: 2px;
   font-weight: 600;
   transition: var(--transition-smooth);
   font-size: 0.95rem;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 .nav-cta:hover {
@@ -262,7 +264,7 @@ body.page-partnership .nav-links a.active::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+  padding: 120px var(--spacing-md) var(--spacing-md);
   position: relative;
   overflow: hidden;
   background: var(--primary-white);
