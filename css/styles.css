@@ -516,6 +516,69 @@ body.page-partnership .service-link {
   color: var(--accent-gray);
 }
 
+/* ============================
+   WEBSITE WORK SHOWCASE
+============================ */
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.showcase-card {
+  background: var(--primary-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.showcase-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-orange);
+}
+
+.showcase-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #f0f0f0;
+  position: relative;
+}
+
+.showcase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.showcase-card:hover .showcase-image img {
+  transform: scale(1.05);
+}
+
+.showcase-info {
+  padding: var(--spacing-md);
+  background: var(--primary-white);
+}
+
+.showcase-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-black);
+}
+
+.showcase-info p {
+  font-size: 0.95rem;
+  color: var(--accent-gray);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
 /* Color Variants for Service Cards */
 .service-card-orange::before {
   background: var(--accent-orange);
@@ -1126,8 +1189,6 @@ body.page-partnership .step-content {
   background: var(--accent-gray);
 }
 
-}
-
 /* ============================
    FOOTER
 ============================ */
@@ -1538,6 +1599,15 @@ body.page-websites .upgrade-value {
 ============================ */
 
 @media (max-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .showcase-image {
+    height: 300px;
+  }
+  
   .demo-popup {
     padding: var(--spacing-sm);
   }
