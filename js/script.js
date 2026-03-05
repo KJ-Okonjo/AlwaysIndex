@@ -379,9 +379,12 @@ function initDemoPopup() {
   }
   
   // Close on overlay click
-  popup.querySelector('.demo-popup-overlay').addEventListener('click', () => {
-    popup.classList.remove('active');
-  });
+  const overlay = popup.querySelector('.demo-popup-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      popup.classList.remove('active');
+    });
+  }
   
   // Handle form submission
   if (form) {
