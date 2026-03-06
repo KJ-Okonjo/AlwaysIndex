@@ -508,23 +508,92 @@ p {
 }
 
 /* ============================
-   UPGRADES SECTION
+   PROCESS & UPGRADES SECTION (MERGED)
 ============================ */
 
-.upgrades-section {
-  background: var(--primary-white);
+.process-upgrades-section {
+  background: var(--bg-light);
 }
 
-.upgrades-grid {
+.process-upgrades-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.section-header-left {
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-header-left .section-tag {
+  display: inline-block;
+}
+
+.section-header-left h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-top: 0.5rem;
+}
+
+/* Process Column */
+.process-column {
+  padding-right: var(--spacing-md);
+}
+
+.process-timeline {
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
+}
+
+.process-step {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.step-content {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-white);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 8px;
+}
+
+.step-content h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.125rem;
+}
+
+.step-content p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Upgrades Column */
+.upgrades-column {
+  padding-left: var(--spacing-md);
+}
+
+.upgrades-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
 }
 
 .upgrade-card {
   padding: var(--spacing-md);
-  background: var(--bg-light);
+  background: var(--primary-white);
   border: 1px solid var(--border-light);
   border-radius: 10px;
   transition: var(--transition-smooth);
@@ -533,18 +602,18 @@ p {
 
 .upgrade-card:hover {
   transform: translateY(-2px);
-  background: var(--primary-white);
+  background: var(--bg-light);
   border-color: var(--accent-blue);
 }
 
 .upgrade-card h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: var(--spacing-xs);
   font-weight: 600;
 }
 
 .upgrade-price {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--accent-blue);
 }
@@ -552,54 +621,6 @@ p {
 .price-unit {
   font-size: 0.75rem;
   color: var(--text-muted);
-}
-
-/* ============================
-   PROCESS SECTION
-============================ */
-
-.process-section {
-  background: var(--bg-light);
-}
-
-.process-timeline {
-  max-width: 900px;
-  margin: var(--spacing-lg) auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.process-step {
-  display: flex;
-  gap: var(--spacing-md);
-  align-items: flex-start;
-}
-
-.step-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--accent-red);
-  flex-shrink: 0;
-  width: 80px;
-}
-
-.step-content {
-  flex: 1;
-  padding: var(--spacing-md);
-  background: var(--primary-white);
-  border-left: 3px solid var(--accent-red);
-  border-radius: 8px;
-}
-
-.step-content h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-}
-
-.step-content p {
-  color: var(--text-muted);
-  margin: 0;
 }
 
 /* ============================
@@ -997,8 +1018,18 @@ p {
     grid-template-columns: 1fr;
   }
   
-  .upgrades-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  .process-upgrades-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .process-column,
+  .upgrades-column {
+    padding: 0;
+  }
+  
+  .upgrades-grid-compact {
+    grid-template-columns: 1fr;
   }
   
   .process-step {

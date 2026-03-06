@@ -23,7 +23,7 @@
 
 .work-section {
   background: var(--primary-white);
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
 }
 
 .work-grid {
@@ -73,12 +73,30 @@
 }
 
 .work-preview-frame iframe {
-  width: 100%;
-  height: 100%;
+  width: 1600px;
+  height: 1000px;
   border: none;
   pointer-events: none;
-  transform: scale(1);
   transform-origin: top left;
+}
+
+/* Scale iframe to fit container */
+@media (min-width: 1200px) {
+  .work-preview-frame iframe {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 900px) {
+  .work-preview-frame iframe {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-width: 899px) {
+  .work-preview-frame iframe {
+    transform: scale(0.4);
+  }
 }
 
 .work-overlay {
