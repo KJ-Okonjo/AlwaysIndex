@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIR — Contemporary Streetwear</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #000000;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 3rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E5E5E5;
+    }
+    
+    .nav-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #000000;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: opacity 0.3s;
+    }
+    
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
+    
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #F8F8F8;
+    }
+    
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    
+    .hero p {
+      font-size: 1.125rem;
+      color: #666666;
+      margin-bottom: 3rem;
+      letter-spacing: 0.03em;
+    }
+    
+    .hero-cta {
+      padding: 1rem 3rem;
+      background: #000000;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    
+    .hero-cta:hover {
+      background: #333333;
+      transform: translateY(-2px);
+    }
+    
+    /* Featured Collection */
+    .featured {
+      padding: 8rem 3rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      margin-bottom: 4rem;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .product-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-image {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #F0F0F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      color: #999999;
+      margin-bottom: 1rem;
+      transition: all 0.3s;
+    }
+    
+    .product-card:hover .product-image {
+      background: #E8E8E8;
+    }
+    
+    .product-info h3 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+      color: #666666;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 8rem 3rem;
+      background: #F8F8F8;
+    }
+    
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .about-text p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #666666;
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: #E0E0E0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999999;
+    }
+    
+    /* Footer */
+    footer {
+      background: #000000;
+      color: #FFFFFF;
+      padding: 4rem 3rem 2rem;
+    }
+    
+    .footer-content {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-section h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: #FFFFFF;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+      
+      .nav-links {
+        gap: 1.5rem;
+      }
+      
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">NOIR</a>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Essentials,<br>Reimagined</h1>
+      <p>Contemporary streetwear for the modern minimalist</p>
+      <a href="#shop" class="hero-cta">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- Featured Collection -->
+  <section class="featured" id="shop">
+    <h2 class="section-title">Featured Collection</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-info">
+          <h3>Essential Hoodie</h3>
+          <p class="product-price">₦45,000</p>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-info">
+          <h3>Classic Tee</h3>
+          <p class="product-price">₦18,000</p>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-info">
+          <h3>Cargo Pants</h3>
+          <p class="product-price">₦55,000</p>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-info">
+          <h3>Oversized Jacket</h3>
+          <p class="product-price">₦85,000</p>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-info">
+          <h3>Utility Vest</h3>
+          <p class="product-price">₦42,000</p>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-info">
+          <h3>Wide Leg Jeans</h3>
+          <p class="product-price">₦48,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Quality Over Quantity</h2>
+        <p>
+          NOIR was founded on the principle that less is more. We create timeless pieces designed to last, crafted from premium materials with meticulous attention to detail.
+        </p>
+        <p>
+          Our collections blur the lines between streetwear and high fashion, offering versatile pieces that elevate everyday style without compromise.
+        </p>
+      </div>
+      <div class="about-image">Brand Image</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Tops</a></li>
+          <li><a href="#">Bottoms</a></li>
+          <li><a href="#">Outerwear</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Craftsmanship</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 NOIR. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

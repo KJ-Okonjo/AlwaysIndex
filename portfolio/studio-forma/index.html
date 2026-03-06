@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Forma — Design That Moves</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --red: #C62025;
+      --blue: #547ba4;
+      --grey: #666A86;
+      --dark: #0d1d30;
+      --light: #F5F5F5;
+    }
+    
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #FFFFFF;
+      color: #000000;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 2rem 3rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav-container {
+      max-width: 1800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000000;
+      text-decoration: none;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+    
+    .nav-menu a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-menu a:hover {
+      color: var(--red);
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 3rem 6rem;
+      background: #FFFFFF;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+    }
+    
+    .hero h1 .highlight {
+      color: var(--red);
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+      max-width: 800px;
+      color: var(--grey);
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+    
+    .hero-cta {
+      padding: 1.25rem 3rem;
+      background: var(--dark);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    
+    .hero-cta:hover {
+      background: var(--red);
+      transform: translateY(-3px);
+    }
+    
+    /* Services */
+    .services {
+      padding: 8rem 3rem;
+      background: var(--light);
+    }
+    
+    .services-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+    
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+    
+    .service-card {
+      padding: 3rem;
+      background: #FFFFFF;
+      transition: all 0.3s;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .service-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+    
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card p {
+      color: var(--grey);
+      line-height: 1.7;
+    }
+    
+    /* Work */
+    .work {
+      padding: 8rem 3rem;
+      background: #FFFFFF;
+    }
+    
+    .work-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    
+    .work-item {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: var(--light);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .work-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .work-item-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2.5rem;
+      background: rgba(0, 0, 0, 0.7);
+      color: #FFFFFF;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+    }
+    
+    .work-item:hover .work-item-content {
+      transform: translateY(0);
+    }
+    
+    .work-item h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .work-item p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .work-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--grey);
+    }
+    
+    /* Capabilities */
+    .capabilities {
+      padding: 8rem 3rem;
+      background: var(--dark);
+      color: #FFFFFF;
+    }
+    
+    .capabilities-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .capabilities-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    
+    .capabilities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .capability-item {
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .capability-item:hover {
+      color: var(--red);
+      padding-left: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: #000000;
+      color: #FFFFFF;
+      padding: 5rem 3rem 3rem;
+    }
+    
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    
+    .footer-brand h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+    
+    .footer-section h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 1rem;
+    }
+    
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: var(--red);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .capabilities-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        padding: 1.5rem 2rem;
+      }
+      
+      .nav-menu {
+        gap: 2rem;
+      }
+      
+      .hero {
+        padding: 100px 2rem 4rem;
+      }
+      
+      .services,
+      .work,
+      .capabilities {
+        padding: 5rem 2rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .capability-item {
+        font-size: 1.5rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">Studio Forma</a>
+      <ul class="nav-menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Design That <span class="highlight">Moves</span> People</h1>
+      <p class="hero-subtitle">
+        We craft bold brand identities and digital experiences that drive results. From strategy to execution, we're your creative partner for growth.
+      </p>
+      <a href="#contact" class="hero-cta">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="services-container">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Services</h2>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Brand Identity</h3>
+          <p>
+            Complete brand systems that capture your essence and resonate with your audience. From logos to guidelines, we build brands that last.
+          </p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Web Design</h3>
+          <p>
+            Modern, responsive websites that convert visitors into customers. Beautiful interfaces backed by strategic thinking.
+          </p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Digital Strategy</h3>
+          <p>
+            Data-driven strategies that align with your business goals. We help you navigate the digital landscape with confidence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="work" id="work">
+    <div class="work-container">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Selected Work</h2>
+      
+      <div class="work-grid">
+        <div class="work-item">
+          <div class="work-placeholder">Project Preview</div>
+          <div class="work-item-content">
+            <h3>Aurora Wellness</h3>
+            <p>Brand Identity & Web Design</p>
+          </div>
+        </div>
+        
+        <div class="work-item">
+          <div class="work-placeholder">Project Preview</div>
+          <div class="work-item-content">
+            <h3>Velocity Tech</h3>
+            <p>Product Design & Development</p>
+          </div>
+        </div>
+        
+        <div class="work-item">
+          <div class="work-placeholder">Project Preview</div>
+          <div class="work-item-content">
+            <h3>Urban Gardens</h3>
+            <p>E-commerce Platform</p>
+          </div>
+        </div>
+        
+        <div class="work-item">
+          <div class="work-placeholder">Project Preview</div>
+          <div class="work-item-content">
+            <h3>Midnight Records</h3>
+            <p>Brand Identity & Packaging</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="capabilities">
+    <div class="capabilities-container">
+      <div class="capabilities-content">
+        <div>
+          <span class="section-label" style="color: var(--red);">Expertise</span>
+          <h2 class="section-title">What We're Great At</h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 1.125rem; line-height: 1.7;">
+            Our multidisciplinary team brings together design, technology, and strategy to create exceptional work that drives business growth.
+          </p>
+        </div>
+        
+        <div class="capabilities-list">
+          <div class="capability-item">Brand Strategy</div>
+          <div class="capability-item">Visual Identity</div>
+          <div class="capability-item">UI/UX Design</div>
+          <div class="capability-item">Web Development</div>
+          <div class="capability-item">Motion Design</div>
+          <div class="capability-item">Content Creation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Studio Forma</h3>
+        <p>
+          A creative studio building brands and digital experiences that make an impact. Based in Lagos, working globally.
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Brand Identity</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Strategy</a></li>
+          <li><a href="#">Development</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Dribbble</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Studio Forma. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
