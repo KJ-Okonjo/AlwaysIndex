@@ -179,6 +179,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================
+// COUNT-UP ANIMATION
+// ============================
+function animateCount(element) {
+  const target = parseInt(element.getAttribute('data-target'));
+  const duration = 2000; // 2 seconds
+  const increment = target / (duration / 16); // 60fps
+  let current = 0;
+  
+  const updateCount = () => {
+    current += increment;
+    if (current < target) {
+      element.textContent = Math.floor(current);
+      requestAnimationFrame(updateCount);
+    } else {
+      element.textContent = target;
+    }
+  };
+  
+  updateCount();
+}
+
+// ============================
 // INTERSECTION OBSERVER FOR ANIMATIONS
 // ============================
 const observerOptions = {
@@ -190,11 +212,17 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      
+      // Trigger count-up animation for stats
+      if (entry.target.hasAttribute('data-target')) {
+        animateCount(entry.target);
+        observer.unobserve(entry.target); // Only animate once
+      }
     }
   });
 }, observerOptions);
 
 // Observe all animatable elements
-document.querySelectorAll('.section-header, .pricing-card, .process-step, .work-card').forEach(el => {
+document.querySelectorAll('.section-header, .pricing-card, .process-step, .work-card, .stat-number[data-target]').forEach(el => {
   observer.observe(el);
 });
