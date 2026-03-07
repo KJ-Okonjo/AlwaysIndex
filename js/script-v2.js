@@ -110,25 +110,53 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 // ============================
-// CONTACT FORM
+// CONTACT FORM - FORMSPREE INTEGRATION
 // ============================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
     
-    // Here you would typically send the data to your server
-    console.log('Form submitted:', data);
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
     
-    // Show success message
-    alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-    
-    // Reset form
-    contactForm.reset();
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Success
+        alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+        contactForm.reset();
+      } else {
+        // Error from Formspree
+        const data = await response.json();
+        if (data.errors) {
+          alert('Error: ' + data.errors.map(error => error.message).join(', '));
+        } else {
+          alert('Oops! There was a problem submitting your form. Please try again.');
+        }
+      }
+    } catch (error) {
+      // Network error
+      console.error('Form submission error:', error);
+      alert('Oops! There was a problem submitting your form. Please try again or contact us directly.');
+    } finally {
+      // Re-enable button
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
   });
 }
 

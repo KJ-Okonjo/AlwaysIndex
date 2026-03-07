@@ -365,7 +365,7 @@
       </div>
       
       <div class="contact-form-container">
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvrpvny" method="POST">
           <div class="form-row">
             <div class="form-field">
               <label for="name">Your Name</label>
@@ -412,6 +412,10 @@
             <label for="message">Project Details</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
+          
+          <!-- Formspree configuration -->
+          <input type="hidden" name="_subject" value="New Website Project Inquiry - AlwaysIndex">
+          <input type="text" name="_gotcha" style="display:none">
           
           <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
         </form>
@@ -468,6 +472,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/script-v2.js"></script>
+  <script src="js/script-v2.js?v=3"></script>
 </body>
 </html>
