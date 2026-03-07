@@ -374,36 +374,36 @@
             
             <div class="form-field">
               <label for="brandName">Brand Name</label>
-              <input type="text" id="brandName" name="brandName" required>
+              <input type="text" id="brandName" name="Brand Name" required>
             </div>
           </div>
           
           <div class="form-field">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="_replyto" required>
           </div>
           
           <div class="form-row">
             <div class="form-field">
               <label for="projectType">Project Type</label>
-              <select id="projectType" name="projectType" required>
+              <select id="projectType" name="Project Type" required>
                 <option value="">Select type</option>
-                <option value="clothing">Clothing Brand</option>
-                <option value="personal">Personal Brand / Creator</option>
-                <option value="startup">Startup / Business</option>
-                <option value="ecommerce">E-commerce</option>
-                <option value="other">Other</option>
+                <option value="Clothing Brand">Clothing Brand</option>
+                <option value="Personal Brand / Creator">Personal Brand / Creator</option>
+                <option value="Startup / Business">Startup / Business</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             
             <div class="form-field">
               <label for="budget">Budget Range</label>
-              <select id="budget" name="budget" required>
+              <select id="budget" name="Budget Range" required>
                 <option value="">Select range</option>
-                <option value="starter">₦350k - Starter</option>
-                <option value="professional">₦600k - Professional</option>
-                <option value="premium">₦950k - Premium</option>
-                <option value="custom">Custom Project</option>
+                <option value="₦350k - Starter">₦350k - Starter</option>
+                <option value="₦600k - Professional">₦600k - Professional</option>
+                <option value="₦950k - Premium">₦950k - Premium</option>
+                <option value="Custom Project">Custom Project</option>
               </select>
             </div>
           </div>
@@ -415,6 +415,7 @@
           
           <!-- Formspree configuration -->
           <input type="hidden" name="_subject" value="New Website Project Inquiry - AlwaysIndex">
+          <input type="hidden" name="_next" value="https://always-index.vercel.app/?success=true">
           <input type="text" name="_gotcha" style="display:none">
           
           <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>

@@ -115,48 +115,20 @@ document.querySelectorAll('.faq-item').forEach(item => {
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
+  // Show success message if redirected back with success parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+    // Remove success parameter from URL
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+  
+  // Add loading state on submit
+  contactForm.addEventListener('submit', (e) => {
     const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    
-    // Disable button and show loading state
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
-    
-    try {
-      const formData = new FormData(contactForm);
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        // Success
-        alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-        contactForm.reset();
-      } else {
-        // Error from Formspree
-        const data = await response.json();
-        if (data.errors) {
-          alert('Error: ' + data.errors.map(error => error.message).join(', '));
-        } else {
-          alert('Oops! There was a problem submitting your form. Please try again.');
-        }
-      }
-    } catch (error) {
-      // Network error
-      console.error('Form submission error:', error);
-      alert('Oops! There was a problem submitting your form. Please try again or contact us directly.');
-    } finally {
-      // Re-enable button
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
-    }
+    // Form will submit naturally to Formspree
   });
 }
 
