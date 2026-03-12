@@ -346,6 +346,7 @@ p {
   display: flex;
   gap: var(--spacing-lg);
   justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--border-light);
@@ -353,6 +354,9 @@ p {
 
 .stat {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .stat-number {
@@ -361,6 +365,7 @@ p {
   color: var(--accent-red);
   margin-bottom: 0.5rem;
   display: inline-block;
+  line-height: 1;
 }
 
 .stat-percent {
@@ -368,6 +373,9 @@ p {
   font-weight: 700;
   color: var(--accent-red);
   margin-left: 0.1rem;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
 }
 
 .stat-label {
@@ -375,6 +383,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
+  line-height: 1;
 }
 
 /* ============================
@@ -1098,6 +1107,7 @@ p {
     gap: var(--spacing-xs);
     padding-top: var(--spacing-md);
     justify-content: space-between;
+    align-items: flex-start;
   }
   
   .stat {
@@ -1107,10 +1117,17 @@ p {
   
   .stat-number {
     font-size: 1.75rem;
+    line-height: 1;
+  }
+  
+  .stat-percent {
+    font-size: 1.75rem;
+    line-height: 1;
   }
   
   .stat-label {
     font-size: 0.7rem;
+    line-height: 1.2;
   }
   
   .section-header h2 {
