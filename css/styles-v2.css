@@ -364,7 +364,7 @@ p {
   font-weight: 700;
   color: var(--accent-red);
   margin-bottom: 0.5rem;
-  display: inline-block;
+  display: inline;
   line-height: 1;
 }
 
@@ -372,10 +372,8 @@ p {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent-red);
-  margin-left: 0.1rem;
-  display: inline-block;
+  display: inline;
   line-height: 1;
-  vertical-align: baseline;
 }
 
 .stat-label {
@@ -384,6 +382,7 @@ p {
   letter-spacing: 0.1em;
   color: var(--text-muted);
   line-height: 1;
+  margin-top: 0.5rem;
 }
 
 /* ============================
@@ -1116,18 +1115,21 @@ p {
   }
   
   .stat-number {
-    font-size: 1.75rem;
+    font-size: 1.625rem;
     line-height: 1;
+    display: inline;
   }
   
   .stat-percent {
-    font-size: 1.75rem;
+    font-size: 1.625rem;
     line-height: 1;
+    display: inline;
   }
   
   .stat-label {
     font-size: 0.7rem;
     line-height: 1.2;
+    margin-top: 0.25rem;
   }
   
   .section-header h2 {
