@@ -56,16 +56,28 @@ window.addEventListener('scroll', () => {
 // ============================
 function updatePrices(currency) {
   currentCurrency = currency;
-  const rate = currencyRates[currency];
   const symbol = currencySymbols[currency];
   
   // Update all price displays
   document.querySelectorAll('.price-value').forEach(priceElement => {
-    const ngnPrice = parseInt(priceElement.getAttribute('data-ngn'));
-    const convertedPrice = Math.round(ngnPrice * rate);
+    let price;
+    
+    // Use specific currency data attribute if available, otherwise calculate
+    if (currency === 'NGN') {
+      price = parseInt(priceElement.getAttribute('data-ngn'));
+    } else if (currency === 'USD' && priceElement.hasAttribute('data-usd')) {
+      price = parseInt(priceElement.getAttribute('data-usd'));
+    } else if (currency === 'GBP' && priceElement.hasAttribute('data-gbp')) {
+      price = parseInt(priceElement.getAttribute('data-gbp'));
+    } else {
+      // Fallback to conversion if specific price not available
+      const ngnPrice = parseInt(priceElement.getAttribute('data-ngn'));
+      const rate = currencyRates[currency];
+      price = Math.round(ngnPrice * rate);
+    }
     
     // Format with commas
-    const formattedPrice = convertedPrice.toLocaleString();
+    const formattedPrice = price.toLocaleString();
     priceElement.textContent = formattedPrice;
   });
   
